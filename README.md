@@ -1,2 +1,2 @@
 # Fileor
-A tool that manage your files and folder.
+Open-source tool to upload PDFs and solve questions with interactive canvas annotations.
