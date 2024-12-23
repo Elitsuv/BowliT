@@ -4,7 +4,11 @@ def toss():
     print("Welcome to Bowl-it. Would you like to toss? (Y/N): ")
     response = input("Please enter: ").capitalize()
 
-    if response == "Y" or "Yes":
+    while response not in ["Y", "Yes", "N", "No"]:
+        print("Invalid input. Please enter 'Y' or 'N'.")
+        response = input("Please enter: ").capitalize()
+
+    if response in ["Y", "Yes"]:
         print("Let's toss!")
         
         user_choice = input("Choose Heads or Tails: ").capitalize()
@@ -26,7 +30,7 @@ def toss():
         else:
             print("Robot wins the toss!")
             return "robot"
-    elif response == "N" or "no":
+    elif response in ["N", "No"]:
         print("Robot will toss.")
         robot_choice = random.choice(["Heads", "Tails"])
         print(f"Robot chose {robot_choice}")
@@ -45,8 +49,6 @@ def toss():
         else:
             print("You win the toss!")
             return "user"
-    else:
-        print("Invalid input. Please enter 'Y' or 'N'.")
 
 def batting_innings(player, opponent):
     score = 0
